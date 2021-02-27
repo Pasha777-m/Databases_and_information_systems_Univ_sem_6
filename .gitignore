@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+#jetbrains stuff
+.idea/
+
+# xed backup
+*~
+
+#Libre stuff
+.~lock*
