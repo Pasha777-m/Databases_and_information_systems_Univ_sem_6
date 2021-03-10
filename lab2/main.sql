@@ -8,7 +8,7 @@ CREATE TABLE "users" (
 CREATE TABLE "canvasses" (
   "id" SERIAL PRIMARY KEY,
   "title" TEXT,
-  "owner_id" INTEGER
+  "owner_id" INTEGER,
 );
 
 CREATE TABLE "notes" (
@@ -25,10 +25,10 @@ CREATE TABLE "placement" (
   "coordinates" POINT,
 );
 
-ALTER TABLE "canvasses" ADD FOREIGN KEY ("owner_id") REFERENCES "users" ("id");
+ALTER TABLE "canvasses" ADD FOREIGN KEY ("owner_id") REFERENCES "users" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "notes" ADD FOREIGN KEY ("owner_id") REFERENCES "users" ("id");
+ALTER TABLE "notes" ADD FOREIGN KEY ("owner_id") REFERENCES "users" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "placement" ADD FOREIGN KEY ("notes_id") REFERENCES "notes" ("id");
+ALTER TABLE "placement" ADD FOREIGN KEY ("notes_id") REFERENCES "notes" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "placement" ADD FOREIGN KEY ("canvas_id") REFERENCES "canvasses" ("id");
+ALTER TABLE "placement" ADD FOREIGN KEY ("canvas_id") REFERENCES "canvasses" ("id") ON DELETE CASCADE;
