@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Response</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+    <form class="input" action="" method="post">
+
+        <label for="command"><h2 class="padding10">Command</h2></label>
+        <input class="w70" type="text" name="command">
+        <input class="button" type="submit">
+
+    </form>
+    <h2>{{command}}</h2>
+    <div class="container">
+        <div class="white">
+            <p>{{message}}</p>
+        </div>
+    </div> 
+</body>
+</html>
